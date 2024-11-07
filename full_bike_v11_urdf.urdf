@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="full_bike_v11_urdf">
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0.0189844090153953 -0.0271612293327177 -0.00117591979293888"
+        rpy="0 0 0" />
+      <mass
+        value="0.114" />
+      <inertia
+        ixx="0.00015754"
+        ixy="2.0746E-09"
+        ixz="2.0816E-05"
+        iyy="0.00078991"
+        iyz="-3.7935E-09"
+        izz="0.00075220" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0 1 1 0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="encoder">
+    <inertial>
+      <origin
+        xyz="-1.4457E-14 -0.025446 4.7184E-16"
+        rpy="0 0 0" />
+      <mass
+          value="0.090" />
+      <inertia
+          ixx="0.00025248400898915477"
+          ixy="-0.8621760914779632e-20"
+          ixz="0.3125510284765529e-19"
+          iyy="0.00012638813446326827"
+          iyz="-0.9010141680662294e-21"
+          izz="0.00012638813446326827" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//encoder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//encoder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="encoder"
+    type="fixed">
+    <origin
+      xyz="0.026028 -0.025439 0.055323"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="encoder" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="encoder_axle">
+    <inertial>
+      <origin
+        xyz="0.0008798 0.005 0.00060997"
+        rpy="0 0 0" />
+      <mass
+          value="0.002" />
+      <inertia
+          ixx="1.7789E-08"
+          ixy="-1.1306E-24"
+          ixz="-2.0677E-39"
+          iyy="2.2499E-09"
+          iyz="-2.0117E-25"
+          izz="1.7789E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//encoder_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//encoder_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="encoder_axle"
+    type="revolute">
+    <origin
+      xyz="0 -0.056 0"
+      rpy="0 0 0" />  
+    <parent
+      link="encoder" />
+    <child
+      link="encoder_axle" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="momentum_wheel">
+    <inertial>
+      <origin
+        xyz="6.9389E-18 -0.0025 0"
+        rpy="0 0 0" />
+      <mass
+          value="0.095" />
+      <inertia
+          ixx="0.00013346"
+          ixy="-2.7256E-20"
+          ixz="-2.2905E-22"
+          iyy="0.00026658"
+          iyz="1.7484E-20"
+          izz="0.00013346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//momentum_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//momentum_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="momentum_wheel"
+    type="revolute">
+    <origin
+      xyz="0.0008798 0.0031003 0.00060997"
+      rpy="0 0 0" />
+    <parent
+      link="encoder_axle" />
+    <child
+      link="momentum_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-6.28" upper="6.28" effort="100" velocity="1.0"/>
+  </joint>
+  <link
+    name="pi">
+    <inertial>
+      <origin
+        xyz="4.7184E-16 0.01 0.03"
+        rpy="0 0 0" />
+      <mass
+          value="0.046" />
+      <inertia
+          ixx="1.533E-05"
+          ixy="1.1076E-22"
+          ixz="-5.9774E-21"
+          iyy="4.484E-05"
+          iyz="2.4057E-22"
+          izz="3.2562E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//pi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//pi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pi"
+    type="fixed">
+    <origin
+      xyz="-0.023972 0.0029238 0.03643"
+      rpy="1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="pi" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="controller">
+    <inertial>
+      <origin
+        xyz="0 0.005 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.012" />
+      <inertia
+        ixx="1.7E-06"
+        ixy="1.7219E-38"
+        ixz="1.2356E-23"
+        iyy="2.5E-06"
+        iyz="-8.6813E-38"
+        izz="1E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//controller.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//controller.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="controller"
+    type="fixed">
+    <origin
+      xyz="0.041028 -0.01023 -0.01657"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="controller" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="sensor">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0.0013524 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.002" />
+      <inertia
+        ixx="0.83E-07"
+        ixy="2.1614E-23"
+        ixz="1.4626E-24"
+        iyy="1.67E-07"
+        iyz="0.4237E-23"
+        izz="2.167E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//sensor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//sensor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sensor"
+    type="fixed">
+    <origin
+      xyz="-0.053972 0 -0.03157"
+      rpy="0 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="sensor" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="driving_motor">
+    <inertial>
+      <origin
+        xyz="0 0.03049 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.139" />
+      <inertia
+        ixx="5.3723E-05"
+        ixy="-1.4025E-37"
+        ixz="2.2683E-37"
+        iyy="2.1036E-05"
+        iyz="5.2468E-21"
+        izz="5.3723E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driving_motor"
+    type="fixed">
+    <origin
+      xyz="-0.094965 0.018052 0.038405"
+      rpy="0 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="driving_motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="driving_axle">
+    <inertial>
+      <origin
+        xyz="-1.8735E-16 0.0075 1.5266E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.004" />
+      <inertia
+        ixx="7.6023E-08"
+        ixy="2.6783E-22"
+        ixz="-1.4330E-37"
+        iyy="2.0000E-09"
+        iyz="4.0213E-23"
+        izz="7.6023E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driving_axle"
+    type="revolute">
+    <origin
+      xyz="0 0.065 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="driving_motor" />
+    <child
+      link="driving_axle" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-6.28" upper="6.28" effort="100" velocity="1.0"/>
+  </joint>
+  <link
+    name="driving_pulley">
+    <inertial>
+      <origin
+        xyz="0 0 -0.003"
+        rpy="0 0 0" />
+      <mass
+        value="0.0013147" />
+      <inertia
+        ixx="2.9447E-08"
+        ixy="-3.3087E-24"
+        ixz="1.141E-24"
+        iyy="2.9447E-08"
+        iyz="2.0208E-25"
+        izz="4.946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driving_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driving_pulley"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.57079632679489 1.17770151636838 -3.14159265358978" />
+    <parent
+      link="driving_axle" />
+    <child
+      link="driving_pulley" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-6.28" upper="6.28" effort="100" velocity="1.0"/>
+  </joint>
+  <link
+    name="battery">
+    <inertial>
+      <origin
+        xyz="0.06 0.02 0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.144" />
+      <mass
+          value="0.194" />
+      <inertia
+          ixx="4.0416E-05"
+          ixy="1.6967E-20"
+          ixz="2.8394E-20"
+          iyy="2.4744E-04"
+          iyz="-1.7292E-21"
+          izz="2.5886E-04" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//battery.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//battery.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="battery"
+    type="fixed">
+    <origin
+      xyz="-0.068972 -0.02023 -0.0015703"
+      rpy="3.1416 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="battery" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="steering_motor">
+    <inertial>
+      <origin
+        xyz="0.00044245 -0.004417 -0.037878"
+        rpy="0 0 0" />
+      <mass
+        value="0.0066786" />
+      <inertia
+        ixx="6.4227E-07"
+        ixy="1.6288E-08"
+        ixz="2.8698E-09"
+        iyy="4.3446E-07"
+        iyz="-3.6837E-08"
+        izz="3.6599E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//steering_motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//steering_motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steering_motor"
+    type="fixed">
+    <origin
+      xyz="0.15903 -0.027063 0"
+      rpy="-3.1416 0 -1.493" />
+    <parent
+      link="chassis" />
+    <child
+      link="steering_motor" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="steering">
+    <inertial>
+      <origin
+        xyz="0.0061132 0.059006 0.006098"
+        rpy="0 0 0" />
+      <mass
+          value="0.006" />
+      <inertia
+          ixx="2.0902E-06"
+          ixy="8.9243E-22"
+          ixz="1.569E-08"
+          iyy="4.2381E-07"
+          iyz="-3.1164E-21"
+          izz="1.8892E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//steering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//steering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steering"
+    type="revolute">
+    <origin
+      xyz="0.0056048056356241 0.00656834864747075 -0.0504297282276682"
+      rpy="1.57079632679489 0 -1.49304671432393" />
+    <parent
+      link="steering_motor" />
+    <child
+      link="steering" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-0.785" upper="0.785" effort="100" velocity="1.0"/>
+  </joint>
+  <link
+    name="front_wheel">
+    <inertial>
+      <origin
+        xyz="2.7756E-16 -9.5757E-16 -0.0042048"
+        rpy="0 0 0" />
+      <mass
+          value="0.024" />
+      <inertia
+          ixx="8.556E-06"
+          ixy="-1.1516E-21"
+          ixz="3.2028E-22"
+          iyy="8.556E-06"
+          iyz="1.6014E-21"
+          izz="1.6922E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_wheel"
+    type="revolute">
+    <origin
+      xyz="0.00654850580518815 0.082 0.000510172200504047"
+      rpy="3.10066690760982 0.0661250916539414 2.58680548489622" />
+    <parent
+      link="steering" />
+    <child
+      link="front_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit lower="-6.28" upper="6.28" effort="100" velocity="1.0"/>
+  </joint>
+  <link
+    name="driven_pulley">
+    <inertial>
+      <origin
+        xyz="0.018984 -0.027161 -0.0011759"
+        rpy="0 0 0" />
+      <mass
+        value="0.0013147" />
+      <inertia
+        ixx="2.9447E-08"
+        ixy="-3.3087E-24"
+        ixz="1.141E-24"
+        iyy="2.9447E-08"
+        iyz="2.0208E-25"
+        izz="4.946E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driven_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//driven_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="driven_pulley"
+    type="revolute">
+    <origin
+      xyz="-0.121972452610634 -0.0471611805118255 -0.029570271772332"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="driven_pulley" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="back_wheel">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 3.4694E-18 -0.0036"
+        rpy="0 0 0" />
+      <mass
+          value="0.024" />
+      <inertia
+          ixx="8.556E-06"
+          ixy="-1.1516E-21"
+          ixz="3.2028E-22"
+          iyy="8.556E-06"
+          iyz="1.6014E-21"
+          izz="1.6922E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="D:/capstone/Sem_7/full_bike_v11_urdf/meshes//back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_wheel"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0178"
+      rpy="0 0 0" />
+    <parent
+      link="driven_pulley" />
+    <child
+      link="back_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit lower="-6.28" upper="6.28" effort="100" velocity="1.0"/>
+  </joint>
+</robot>
