@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="colored_plane">
+  <link name="plane_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="100 100 0.1" /> <!-- Adjust the size of the plane as needed -->
+      </geometry>
+      <material name="road_color">
+        <color rgba="1 1 0.0 1" /> <!-- Adjust the color as needed (e.g., grey) -->
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="50 50 0.1" /> <!-- Match the size of the visual geometry -->
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.0" />
+      <inertia ixx="10" ixy="10" ixz="10" iyy="10" iyz="10" izz="10" />
+    </inertial>
+  </link>
+</robot>
